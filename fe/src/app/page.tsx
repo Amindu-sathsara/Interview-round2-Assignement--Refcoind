@@ -56,7 +56,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Hero Section */}
+      
       <div className="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white">
         <div
           className="absolute inset-0 opacity-20"
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Properties Grid */}
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {loading ? (
           <div className="text-center py-12">
@@ -98,30 +98,47 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Pagination */}
+            
             {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-2 mt-12">
+              <div className="flex justify-center mt-12">
+               <div className="flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-lg shadow-sm border border-gray-100">
                 <span className="text-gray-600 mr-4">
                   Total {filteredProperties.length} items
                 </span>
+                <button
+      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+      disabled={currentPage === 1}
+      className="px-3 py-2 text-gray-600 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      <span className="font-mono text-sm p-1">&lt;</span>
+    </button>
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors border-1 ${
                       currentPage === page
-                        ? 'bg-blue-600 text-white'
+                        ? 'border-yellow-500 text-yellow-600 bg-yellow-50'
                         : 'bg-white text-gray-700 hover:bg-gray-100'
                     }`}
                   >
                     {page}
                   </button>
                 ))}
-              </div>
-            )}
-          </>
+                <button
+      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+      disabled={currentPage === totalPages}
+      className="px-3 py-2 text-gray-600 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      <span className="font-mono text-sm p-1">&gt;</span>
+    </button>
+      </div>
+      </div>
+       )}
+      </>
         )}
       </div>
+      
     </div>
   );
 }

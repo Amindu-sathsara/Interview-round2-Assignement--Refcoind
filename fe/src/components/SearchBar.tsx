@@ -74,7 +74,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
       <button
         onClick={handleSearch}
-        className="bg-blue-600 text-white px-8 py-2.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 font-medium"
+        className="bg-blue-400 text-white px-8 py-2.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 font-medium"
       >
         <Search className="h-5 w-5" />
         Search
