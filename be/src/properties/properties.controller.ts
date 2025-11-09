@@ -29,18 +29,26 @@ import { CloudinaryService } from '../cloudinary/cloudinary.service';
 export class PropertiesController {
   constructor(
     private readonly propertiesService: PropertiesService,
-    private readonly cloudinary:CloudinaryService
+    private readonly cloudinary: CloudinaryService
 
   ) {}
 
-   @Post('upload-image')
+  @Post('upload-image')
   @UseInterceptors(FileInterceptor('image'))
   async uploadImage(@UploadedFile() file: Express.Multer.File) {
-    const uploaded = await this.cloudinary.uploadImage(file);
-    return {
-      url: uploaded.secure_url,
-      public_id: uploaded.public_id,
-    };
+    if (!file) {
+      throw new BadRequestException('No file provided');
+    }
+    try {
+      const uploaded = await this.cloudinary.uploadImage(file);
+      return {
+        url: uploaded.secure_url,
+        public_id: uploaded.public_id,
+      };
+    } catch (error) {
+      console.error('Cloudinary upload error:', error);
+      throw new BadRequestException(`Image upload failed: ${error.message}`);
+    }
   }
 
   //@Post()
