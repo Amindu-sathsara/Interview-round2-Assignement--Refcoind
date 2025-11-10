@@ -6,7 +6,8 @@
 
 # backend/.env
 PORT=3001
-MONGODB_URI=mongodb+srv://<user>:<pass>@cluster0.xxxxx.mongodb.net/refcoins
+MONGODB_URI=MONGODB_URI=mongodb+srv://amindusathsara121_db_user:207roU4GFY8ApYNH@cluster0.8p1r5zd.mongodb.net/
+
 
 # API endpoints
 1.(GET)-http://localhost:3001/properties ( get all properties)

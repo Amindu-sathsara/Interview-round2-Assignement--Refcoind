@@ -184,7 +184,7 @@ export default function AddPropertyPage() {
                 required
                 value={formData.title}
                 onChange={(e) => handleTitleChange(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900"
                 placeholder="e.g., Single Home at Florida S, Pinecrest"
               />
             </div>
@@ -198,7 +198,7 @@ export default function AddPropertyPage() {
                 type="text"
                 value={formData.slug}
                 onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900"
                 placeholder="property-slug"
               />
             </div>
@@ -213,7 +213,7 @@ export default function AddPropertyPage() {
                   required
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value as any })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-600"
                 >
                   <option value="Colombo">Colombo</option>
                   <option value="Kandy">Kandy</option>
@@ -229,7 +229,7 @@ export default function AddPropertyPage() {
                   required
                   value={formData.type}
                   onChange={(e) => setFormData({ ...formData, type: e.target.value as any })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-600"
                 >
                   <option value="Single Family">Single Family</option>
                   <option value="Villa">Villa</option>
@@ -244,7 +244,7 @@ export default function AddPropertyPage() {
                   required
                   value={formData.status}
                   onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-600 "
                 >
                   <option value="For Sale">For Sale</option>
                   <option value="For Rent">For Rent</option>
@@ -256,7 +256,7 @@ export default function AddPropertyPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Price (USD) *
+                  Price (LKR) *
                 </label>
                 <input
                   type="number"
@@ -264,7 +264,7 @@ export default function AddPropertyPage() {
                   min="0"
                   value={formData.price || ''}
                   onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900"
                   placeholder="e.g., 580000"
                 />
               </div>
@@ -279,7 +279,7 @@ export default function AddPropertyPage() {
                   min="1"
                   value={formData.area || ''}
                   onChange={(e) => setFormData({ ...formData, area: Number(e.target.value) })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900"
                   placeholder="e.g., 5600"
                 />
               </div>
@@ -295,7 +295,7 @@ export default function AddPropertyPage() {
                 rows={4}
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900"
                 placeholder="Describe the property..."
               />
             </div>
@@ -319,7 +319,7 @@ export default function AddPropertyPage() {
               <button
                 type="button"
                 onClick={() => router.push('/')}
-                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium text-gray-900"
               >
                 Cancel
               </button>
